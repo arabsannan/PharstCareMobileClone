@@ -6,26 +6,26 @@ import PlusButton from "../components/PlusButton";
 
 const ConsultationScreen = ({ navigation }) => {
   return (
-    <View>
-      <View style={[tw`py-3 pl-3 bg-blue-600 justify-between `, styles.header]}>
-        <TouchableOpacity onPress={() => navigation.navigate("Order")}>
+    <View style={[tw`bg-white flex-1`]}>
+      <View style={[tw`py-2 pl-3 bg-blue-600 flex-row justify-between`]}>
+        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
           <Icon
             name="angle-left"
             type="fontisto"
             color="white"
             size={20}
-            style={tw``}
+            style={tw`py-1`}
           />
         </TouchableOpacity>
         <View>
-          <Text h4 style={[tw`text-white pl-5`, styles.headerText]}>
+          <Text h4 style={[tw`text-white py-2`, styles.headerText]}>
             Quick Consultation
           </Text>
         </View>
         <Text></Text>
       </View>
-      <View style={tw`p-5`}>
-        <Text style={tw`text-xl font-bold text-gray-500`}>
+      <View style={tw`px-6 py-2`}>
+        <Text style={tw`text-gray-500 text-lg font-bold`}>
           Please report your issue here, a doctor will reach out to you
           immediately.
         </Text>
@@ -51,6 +51,8 @@ const ConsultationScreen = ({ navigation }) => {
             Send Complaint
           </Text>
         </TouchableOpacity>
+      </View>
+      <View style={tw`my-2`}>
         <PlusButton />
       </View>
     </View>
@@ -67,13 +69,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-
-    // alignSelf: "center",
-    // textAlign: 'center'
   },
   headerText: {
     lineHeight: 22,
-    // fontWeight: "800",
   },
   image: {
     width: 109,

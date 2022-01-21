@@ -114,10 +114,10 @@ export default function BottomNav() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          position: "absolute",
-          bottom: 0,
+          height: 55,
           borderTopRightRadius: 16,
-          borderTopLeftRadius: 16
+          borderTopLeftRadius: 16,
+          borderTopWidth: 0,
         },
       }}
     >

@@ -2,19 +2,25 @@ import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SearchBar, Icon, Button } from "react-native-elements";
 import tw from "tailwind-react-native-classnames";
-
+import PlusButton from "../components/PlusButton";
+import * as Animatable from "react-native-animatable";
 
 const HomeScreen = () => {
   return (
-    <View style={[tw`bg-white h-full`]}>
-      <View style={tw`p-5 py-28 mb-20`}>
+    <View style={[tw`bg-white flex-1`]}>
+      <View style={tw`p-5 py-28 mb-24`}>
         <Text style={[tw`text-blue-600`, styles.textOne]}>
           Phars
           <Text style={[tw`text-red-600 font-semibold`, styles.textTwo]}>
             +
           </Text>
         </Text>
-        <Text style={[tw`text-red-600`, styles.textTwo]}>Care</Text>
+        <Animatable.Text
+          style={[tw`text-red-600`, styles.textTwo]}
+          animation="fadeInLeftBig"
+        >
+          Care
+        </Animatable.Text>
         <SearchBar
           placeholder="Type Drug Name"
           containerStyle={tw`bg-white border-0 py-5`}
@@ -23,14 +29,10 @@ const HomeScreen = () => {
           // rightIconContainerStyle={tw`bg-blue-500 w-10 rounded-r-full`}
           searchIcon={<Icon name="camera" type="font-awesome" color="gray" />}
         />
-
-        <View style={tw`flex-row justify-end`}>
-          <TouchableOpacity style={[styles.plusButton, tw`shadow-lg bg-white`]}>
-            <Text style={tw`text-red-600 text-3xl`}>+</Text>
-          </TouchableOpacity>
-        </View>
       </View>
-
+      <View style={tw`my-3`}>
+        <PlusButton />
+      </View>
     </View>
   );
 };

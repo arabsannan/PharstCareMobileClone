@@ -2,31 +2,30 @@ import React from "react";
 import tw from "tailwind-react-native-classnames";
 import { StyleSheet, TextInput, View, TouchableOpacity } from "react-native";
 import { Icon, Image, Button, Text } from "react-native-elements";
-// import BottomNav from "../components/BottomNav";
+import PlusButton from "../components/PlusButton";
 
 const OrderScreen = ({ navigation }) => {
   return (
-    <View style={[tw`bg-white h-full`]}>
-      <View style={[tw`py-3 pl-3 bg-blue-600 justify-between `, styles.header]}>
-        <TouchableOpacity onPress={() => navigation.navigate("Consult")}>
+    <View style={[tw`bg-white flex-1`]}>
+      <View style={[tw`py-2 pl-3 bg-blue-600 flex-row justify-between`]}>
+        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
           <Icon
             name="angle-left"
+            style={tw`py-1`}
             type="fontisto"
             color="white"
             size={20}
-            style={tw``}
           />
         </TouchableOpacity>
-
         <View>
-          <Text h4 style={[tw`text-white pl-5`, styles.headerText]}>
+          <Text h4 style={[tw`text-white py-2  `, styles.headerText]}>
             Quick Order
           </Text>
         </View>
         <Text></Text>
       </View>
-      <View style={tw`p-5`}>
-        <Text h4 style={tw`text-gray-500`}>
+      <View style={tw`px-6 py-2`}>
+        <Text style={tw`text-gray-500 text-lg font-bold`}>
           Please tell us what you need and we will get back in seconds.
         </Text>
         <View style={tw`justify-center self-center`}>
@@ -49,11 +48,9 @@ const OrderScreen = ({ navigation }) => {
         >
           <Text style={tw`self-center text-white`}>Make Request</Text>
         </TouchableOpacity>
-        <View style={tw`flex-row justify-end`}>
-          <TouchableOpacity style={[styles.plusButton, tw`shadow-lg bg-white`]}>
-            <Text style={tw`text-red-600 text-3xl`}>+</Text>
-          </TouchableOpacity>
-        </View>
+      </View>
+      <View style={tw`my-2`}>
+        <PlusButton />
       </View>
     </View>
   );
@@ -62,20 +59,13 @@ const OrderScreen = ({ navigation }) => {
 export default OrderScreen;
 
 const styles = StyleSheet.create({
-  header: {
-    flexDirection: "row",
-  },
   headerView: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-
-    // alignSelf: "center",
-    // textAlign: 'center'
   },
   headerText: {
     lineHeight: 22,
-    fontWeight: "800",
   },
   image: {
     width: 109,
