@@ -22,8 +22,8 @@ export default function App() {
               headerShown: false,
             }}
           >
+            {/* <Stack.Screen name="Home" component={BottomNav} /> */}
             <Stack.Screen name="Menu" component={MenuScreen} />
-            <Stack.Screen name="TabBottom" component={BottomNav} />
           </Stack.Navigator>
           {/* <BottomNav /> */}
           {/* <MenuScreen /> */}

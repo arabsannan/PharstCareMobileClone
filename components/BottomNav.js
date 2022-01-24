@@ -8,11 +8,14 @@ import HomeScreen from "../screens/HomeScreen";
 import OrderScreen from "../screens/OrderScreen";
 import ActivityScreen from "../screens/ActivityScreen";
 import ConsultationScreen from "../screens/ConsultationScreen";
+import tw from "tailwind-react-native-classnames";
+
 import * as Animatable from "react-native-animatable";
+import PlusButton from "./PlusButton";
 
 const TabArr = [
   {
-    route: "Home",
+    route: "Homee",
     label: "Home",
     type: "feather",
     icon: "home",
@@ -50,6 +53,33 @@ const TabArr = [
 ];
 
 const Tab = createBottomTabNavigator();
+
+const PlusButtonn = ({ children, onPress }) => (
+  <TouchableOpacity
+    onPress={onPress}
+    style={[
+      {
+        top: -70,
+        left: 90,
+        // elevation: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      },
+      tw`shadow-lg`,
+    ]}
+  >
+    <View
+      style={{
+        width: 50,
+        height: 50,
+        borderRadius: 35,
+        backgroundColor: "powderblue",
+      }}
+    >
+      {children}
+    </View>
+  </TouchableOpacity>
+);
 
 const TabButton = (props) => {
   const { item, onPress, accessibilityState } = props;
@@ -113,14 +143,29 @@ export default function BottomNav() {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
+        tabBarOptions: {
+          showIcon: true,
+        },
         tabBarStyle: {
           height: 55,
-          borderTopRightRadius: 16,
-          borderTopLeftRadius: 16,
+          borderTopRightRadius: 20,
+          borderTopLeftRadius: 20,
           borderTopWidth: 0,
+          backgroundColor: "white",
+          position: "absolute",
         },
       }}
     >
+      {/* <Tab.Screen
+        name="AddButton"
+        component={MenuScreen}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <Icon size={20} name="add" type="ionicons" color="red" />
+          ),
+          tabBarButton: (props) => <PlusButtonn {...props} />,
+        }}
+      /> */}
       {TabArr.map((item, index) => {
         return (
           <Tab.Screen
